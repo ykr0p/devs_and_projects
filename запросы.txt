@@ -1,0 +1,114 @@
+Доступны всем GET 
+
+получить список всех автомобилей
+/api/cars
+
+получить автомобиль по ID
+/api/cars/{id}
+
+получить автомобили по бренду
+/api/cars/by-brand/{brand}
+
+получить автомобили в диапазоне цен
+/api/cars/by-price-range?min={minPrice}&max={maxPrice}
+
+получить автомобили по году выпуска
+/api/cars/by-year/{year}
+
+/api/cars/by-feature?type={type}&value={value}
+получить автомобили по характеристике
+
+получить количество автомобилей
+/api/cars/count
+
+получить автомобили по статусу
+/api/cars/by-status/{status}
+
+получить список всех характеристик
+/api/features
+
+получить характеристику по ID
+/api/features/{id}
+
+получить характеристики по типу и значению
+/api/features/popular?limit={limit}
+
+получить автомобили с данной характеристикой
+/api/features/{id}/cars
+
+получить характеристики по типу
+/api/features/by-type/{type}
+
+
+
+
+Для менеджеров и админов 
+
+POST
+
+создать новый автомобиль
+/api/cars
+
+добавить характеристику к автомобилю
+/api/cars/{carId}/features/{featureId}
+
+обновить статус автомобиля
+/api/cars/{id}/{status}
+
+PUT
+
+обновить автомобиль
+/api/cars
+
+{
+  "id": 1,
+  "brand": "Toyota",
+  "model": "Camry",
+  "year": 2020,
+  "price": 25000.00,
+  "status": "ON_SALE",
+  "features": [
+    {
+      "featureType": "Коробка передач",
+      "featureValue": "Автомат"
+    },
+    {
+      "featureType": "Цвет",
+      "featureValue": "Синий"
+    }
+  ]
+}
+
+DELETE
+
+удалить характеристику у автомобиля
+/api/cars/{carId}/features/{featureId}
+
+
+
+
+Только для админов
+
+POST
+
+создать новую характеристику
+/api/features
+
+PUT
+
+обновить характеристику
+/api/features
+
+{
+  "id": 1,
+  "featureType": "Color",
+  "featureValue": "Metallic Red"
+}
+
+DELETE
+
+удалить автомобиль
+/api/cars/{id}
+
+удалить характеристику
+/api/features/{id}
