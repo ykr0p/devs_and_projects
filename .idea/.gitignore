@@ -1,3 +1,18 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+# Игнорировать папки сборки
+target/
+build/
+out/
+bin/
+
+# Игнорировать файлы IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Игнорировать логи и временные файлы
+*.log
+*.tmp
